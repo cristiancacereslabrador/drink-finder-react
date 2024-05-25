@@ -1,0 +1,36 @@
+html,
+body {
+  background-color: gray;
+}
+header {
+  background-color: #0d6efd;
+  color: white;
+  text-align: center;
+}
+header h1 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 900;
+}
+/* Ejemplo en CSS */
+
+.element-hover:hover {
+  /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); */
+  /* transform: translateY(-4px); */
+  /* transform: translateX(2px); */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  transition: transform 0.3s ease, box-shadow 0.3s eas;
+}
+/* Ejemplo en CSS */
+.button-pressed:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.app-container {
+  background-color: #f0f0f0; /* Gris claro, puedes ajustar el color según tus preferencias */
+  min-height: 100vh; /* Para asegurar que el color de fondo se extienda hasta el final de la ventana */
+  /* padding: 20px; Añade algo de espacio alrededor del contenido si es necesario */
+}
+.text-bold {
+  font-weight: bold;
+}
