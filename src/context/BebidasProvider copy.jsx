@@ -21,7 +21,18 @@ const BebidasProvider = ({ children }) => {
         }lookup.php?i=${bebidaID}`;
         const { data } = await axios(url);
         // console.log("data :>> ", data.drinks[0]);
-        setReceta(data.drinks[0]);
+        // setReceta(data.drinks[0]);
+        console.log("data:", data);
+        console.log("data.drinks:", data.drinks);
+        if (data.drinks && data.drinks.length > 0 && data.drinks[0]) {
+          // Verificar si data.drinks tiene datos y el primer elemento no es null
+
+          // Verificar si data.drinks tiene datos
+          console.log("data :>> ", data.drinks[0]);
+          setReceta(data.drinks[0]);
+        } else {
+          console.log("No se encontraron bebidas");
+        }
       } catch (error) {
         console.log("error", error);
       } finally {

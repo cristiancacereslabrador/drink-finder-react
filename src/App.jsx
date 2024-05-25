@@ -11,7 +11,7 @@ function App() {
       <CategoriasProvider>
         <BebidasProvider>
           <header className="py-3 shadow">
-            <h1>Drinks Finder</h1>
+            <h1 className="py-3 shadow">Drinks Finder</h1>
           </header>
           <Container className="mt-5">
             <Formulario />

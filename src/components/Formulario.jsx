@@ -1,12 +1,12 @@
 import { Button, Form, Row, Col, Alert } from "react-bootstrap";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useCategorias from "../hooks/useCategorias";
 import useBebidas from "../hooks/useBebidas";
 
 const Formulario = () => {
   const [busqueda, setBusqueda] = useState({
-    nombre: "",
-    categoria: "",
+    nombre: "Tequila",
+    categoria: "Shot",
   });
   const [alerta, setAlerta] = useState("");
   const { categorias } = useCategorias();
@@ -20,6 +20,9 @@ const Formulario = () => {
     setAlerta("");
     consultarBebida(busqueda);
   };
+  useEffect(() => {
+    consultarBebida(busqueda);
+  }, []);
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -29,7 +32,7 @@ const Formulario = () => {
         </Alert>
       )}
       <Row>
-        <Col md={6}>
+        <Col md={4}>
           <Form.Group className="mb-3">
             <Form.Label htmlFor="nombre">Drink Name</Form.Label>
             <Form.Control
@@ -48,7 +51,7 @@ const Formulario = () => {
             />
           </Form.Group>
         </Col>
-        <Col md={6}>
+        <Col md={4}>
           {" "}
           <Form.Group className="mb-3">
             <Form.Label htmlFor="nombre">Category Drink</Form.Label>
@@ -73,11 +76,9 @@ const Formulario = () => {
             </Form.Select>
           </Form.Group>
         </Col>
-      </Row>
-      <Row className="justify-content-end">
-        <Col md={3}>
+        <Col md={4} className="d-flex align-items-center pt-3">
           <Button
-            className="text-uppercase w-100 shadow button-pressed"
+            className="text-uppercase w-100 shadow button-pressed d-flex align-items-center element-hover"
             variant="primary"
             type="submit"
           >
@@ -85,6 +86,8 @@ const Formulario = () => {
           </Button>
         </Col>
       </Row>
+      {/* <Row className="justify-content-end">
+      </Row> */}
     </Form>
   );
 };

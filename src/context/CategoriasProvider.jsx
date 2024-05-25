@@ -11,7 +11,7 @@ const CategoriasProvider = ({ children }) => {
       // const url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list";
       const url = `${import.meta.env.VITE_COCKTAIL_URL}list.php?c=list`;
       const { data } = await axios(url);
-      console.log("data.drinks :>> ", data.drinks);
+      // console.log("data.drinks :>> ", data.drinks);
       setCategorias(data.drinks);
     } catch (error) {
       console.log("error", error);
